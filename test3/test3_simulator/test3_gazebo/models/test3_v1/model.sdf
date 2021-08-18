@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version="1.6">
+	<model name="test3">
+	
+		<static>false</static>
+		<pose>0 0 0.1 0 0 0</pose>
+		
+		<link name="base_link">
+			<pose>0 0 0 0 0 0</pose>
+			<inertial>
+				<mass>0.000628</mass>
+				<pose>0 0 0 0 0 0</pose>
+				<inertia>
+					<ixx>0</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0</iyy>
+					<iyz>0</iyz>
+					<izz>0</izz>
+				</inertia>
+			</inertial>
+			<collision name="base_link:1_collision">
+				<geometry>
+					<box>
+						<size>0.01 0.01 0.06</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name="base_link:1_visual">
+				<geometry>
+					<box>
+						<size>0.01 0.01 0.06</size>
+					</box>
+				</geometry>
+			</visual>
+		</link>
+		<link name="2.2_1">
+			<pose>0 0.06 0.0 0 0 0</pose>
+			<inertial>
+				<mass>0.000628</mass>
+				<pose>0 0 0 0 0 0 0</pose>
+				<inertia>
+					<ixx>0</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0</iyy>
+					<iyz>0</iyz>
+					<izz>0</izz>
+				</inertia>
+			</inertial>
+			<collision name="2.2:1_collision">
+				<geometry>
+					<box>
+						<size>0.01 0.01 0.06</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name="2.2:1_visual">
+				<geometry>
+					<box>
+						<size>0.01 0.01 0.06</size>
+					</box>
+				</geometry>
+			</visual>
+		</link>
+		<link name="3.1_1">
+			<pose>0 0.03 -0.03 0 0 0</pose>
+			<inertial>
+				<mass>0.000628</mass>
+				<pose>0 0 0 0 0 0</pose>
+				<inertia>
+					<ixx>0</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0</iyy>
+					<iyz>0</iyz>
+					<izz>0</izz>
+				</inertia>
+			</inertial>
+			<collision name="3.1:1_collision">
+				<geometry>
+					<box>
+						<size>0.01 0.06 0.01</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name="3.1:1_visual">
+				<geometry>
+					<box>
+						<size>0.01 0.06 0.01</size>
+					</box>
+				</geometry>
+			</visual>
+		</link>
+		<link name="4.1_1">
+			<pose>0 0.03 0.03 0 0 0</pose>
+			<inertial>
+				<mass>0.000628</mass>
+				<pose>0 0 0 0 0 0</pose>
+				<inertia>
+					<ixx>0</ixx>
+					<ixy>0</ixy>
+					<ixz>0</ixz>
+					<iyy>0</iyy>
+					<iyz>0</iyz>
+					<izz>0</izz>
+				</inertia>
+			</inertial>
+			<collision name="4.1:1_collision">
+				<geometry>
+					<box>
+						<size>0.01 0.06 0.01</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name="4.1:1_visual">
+				<geometry>
+					<box>
+						<size>0.01 0.06 0.01</size>
+					</box>
+				</geometry>
+			</visual>
+		</link>
+		<joint name="rev0" type="revolute">
+			<pose>0 0 0 0 0 0</pose>
+			<child>4.1_1</child>
+			<parent>base_link</parent>
+			<axis>
+				<xyz>-0 0 1</xyz>
+			</axis>
+		</joint>
+		<joint name="rev1" type="revolute">
+			<pose>0 0 0 0 0 0</pose>
+			<child>3.1_1</child>
+			<parent>4.1_1</parent>
+			<axis>
+				<xyz>-0 -1 0</xyz>
+			</axis>
+		</joint>
+		<joint name="rev2" type="fixed">
+			<pose>0 0 0 0 0 0</pose>
+			<child>2.2_1</child>
+			<parent>3.1_1</parent>
+			
+		</joint>
+		
+		<joint name="rev3" type="revolute">
+		    <pose>0 0 0 0 0 0</pose>
+		    <child>2.2_1</child>
+		    <parent>base_link_1</parent>
+		    <axis>
+		        <xyz>0 1 0</xyz>
+		    </axis>
+		</joint>
+	</model>
+</sdf>
