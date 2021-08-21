@@ -21,7 +21,7 @@
   </include>
 
   <!-- spawn test3 -->
-  <include file="$(find test3_gazebo)/launch/spawn_sdf.launch"/>
+  <include file="$(find test3_gazebo)/launch/spawn_test3.launch"/>
 
   <!-- ros_control launch file -->
   <include file="$(find test3_gazebo_control)/launch/test3_gazebo_control.launch"/>
